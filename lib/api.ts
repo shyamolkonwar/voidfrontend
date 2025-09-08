@@ -106,7 +106,7 @@ export class ApiClient {
 
   static async checkBackendHealth(): Promise<boolean> {
     try {
-      const response = await fetch(`${process.env.BACKEND_URL || 'http://13.49.148.204:8001'}/health`, {
+      const response = await fetch(`${process.env.BACKEND_URL || 'https://voidainew.netlify.app'}/health`, {
         method: 'GET',
       });
       return response.ok;
@@ -117,7 +117,7 @@ export class ApiClient {
   }
 
   static async signup(request: SignUpRequest): Promise<AuthResponse> {
-    const response = await fetch(`${process.env.BACKEND_URL || 'http://13.49.148.204:8001'}/api/v1/auth/signup`, {
+    const response = await fetch(`${process.env.BACKEND_URL || 'https://voidainew.netlify.app'}/api/v1/auth/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -134,7 +134,7 @@ export class ApiClient {
   }
 
   static async login(request: LoginRequest): Promise<AuthResponse> {
-    const response = await fetch(`${process.env.BACKEND_URL || 'http://13.49.148.204:8001'}/api/v1/auth/login`, {
+    const response = await fetch(`${process.env.BACKEND_URL || 'https://voidainew.netlify.app'}/api/v1/auth/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -151,7 +151,7 @@ export class ApiClient {
   }
 
   static async getCurrentUser(token: string): Promise<UserInfo> {
-    const response = await fetch(`${process.env.BACKEND_URL || 'http://13.49.148.204:8001'}/api/v1/auth/me`, {
+    const response = await fetch(`${process.env.BACKEND_URL || 'https://voidainew.netlify.app'}/api/v1/auth/me`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -168,7 +168,7 @@ export class ApiClient {
   }
 
   static async logout(token: string): Promise<{ success: boolean; message: string }> {
-    const response = await fetch(`${process.env.BACKEND_URL || 'http://13.49.148.204:8001'}/api/v1/auth/logout`, {
+    const response = await fetch(`${process.env.BACKEND_URL || 'https://voidainew.netlify.app'}/api/v1/auth/logout`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
