@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { SessionHistoryResponse, ApiError } from '../../../../../../types/api';
 
-const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:8001';
+const BACKEND_URL = process.env.BACKEND_URL || 'https://void.fusionfocus.icu';
 
 export async function GET(
   request: NextRequest,
